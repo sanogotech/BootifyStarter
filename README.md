@@ -6,6 +6,9 @@ Bootify   Spring Boot REST API with database in minutes
 
 ##  Docs
 - https://www.axopen.com/blog/2021/10/webpack-projet-front-end-tuto/
+
+-**  https://www.danvega.dev/docs/spring-boot-2-docs/
+
 - Main Repo This is a reddit clone built using Spring Boot 2. I created this project to show off all the cool features of Spring Boot 2.
 - https://github.com/cfaddict/springit
 
