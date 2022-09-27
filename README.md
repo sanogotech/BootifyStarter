@@ -6,6 +6,13 @@ Bootify   Spring Boot REST API with database in minutes
 
 ##  Docs
 - https://www.axopen.com/blog/2021/10/webpack-projet-front-end-tuto/
+- Main Repo This is a reddit clone built using Spring Boot 2. I created this project to show off all the cool features of Spring Boot 2.
+- https://github.com/cfaddict/springit
+
+- UI Templates
+These are the HTML templates that we are using to build out UI for this course. I wanted to provide the raw templates before we start introducing Thymleaf into the equation.
+
+- https://github.com/cfaddict/springit-templates
 
 ## MyApp
 
