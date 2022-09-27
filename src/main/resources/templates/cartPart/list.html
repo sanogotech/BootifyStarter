@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{layout}">
+    <head>
+        <title th:text="#{cartPart.list.headline}" />
+    </head>
+    <body>
+        <div layout:fragment="content">
+            <div class="d-flex flex-wrap mb-4">
+                <h1 th:text="#{cartPart.list.headline}" class="flex-grow-1" />
+                <div>
+                    <a th:href="@{/cartParts/add}" th:text="#{cartPart.list.createNew}" class="btn btn-primary ms-2" />
+                </div>
+            </div>
+            <div th:if="${cartParts.empty}" th:text="#{cartPart.list.empty}" />
+            <div th:if="${!cartParts.empty}" class="table-responsive">
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th th:text="#{cartPart.id.label}" scope="col" />
+                            <th th:text="#{cartPart.releaseDate.label}" scope="col" />
+                            <th th:text="#{cartPart.typeCode.label}" scope="col" />
+                            <th th:text="#{cartPart.supplier.label}" scope="col" />
+                            <th><!-- --></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="cartPart : ${cartParts}">
+                            <td th:text="${cartPart.id}" />
+                            <td th:text="${cartPart.releaseDate}" />
+                            <td th:text="${cartPart.typeCode}" />
+                            <td th:text="${cartPart.supplier}" />
+                            <td>
+                                <form th:action="@{/cartParts/delete/{id}(id=${cartPart.id})}" th:data-confirm-message="#{delete.confirm}" method="post" class="js-submit-confirm float-end">
+                                    <a th:href="@{/cartParts/edit/{id}(id=${cartPart.id})}" th:text="#{cartPart.list.edit}" class="btn btn-sm btn-info" />
+                                    <button th:text="#{cartPart.list.delete}" type="submit" class="btn btn-sm btn-danger" />
+                                </form>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
